@@ -8,7 +8,7 @@ export default {
   },
   data() {
     return {
-      personaggi: [],
+      movies: [],
     };
   },
   created() {
@@ -18,7 +18,18 @@ export default {
       )
       .then((risposta) => {
         console.log(risposta.data);
-        this.personaggi = risposta.data;
+        this.movies = risposta.data;
+        this.title = risposta.data.title;
+        this.originalTitle = risposta.data.original_title;
+        this.lang = risposta.data.original_language;
+        this.averageVote = risposta.data.vote_average;
+        console.log(
+          this.movies,
+          this.title,
+          this.originalTitle,
+          this.lang,
+          this.averageVote
+        );
       });
   },
 };
