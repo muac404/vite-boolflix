@@ -1,14 +1,15 @@
 <script>
 import axios from "axios";
 import AppCard from "./AppCard.vue";
-
 export default {
   name: "AppMain",
   components: {
     AppCard,
   },
   data() {
-    return {};
+    return {
+      personaggi: [],
+    };
   },
   created() {
     axios
@@ -24,6 +25,10 @@ export default {
 </script>
 
 <template>
+  <section>
+    <input type="text" id="name" name="name" required minlength="2" size="10" />
+    <button>Search</button>
+  </section>
   <!-- <section class="container">
     <select name="" id="">
       <option selected>Select category</option>
