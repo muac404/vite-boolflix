@@ -34,27 +34,8 @@ export default {
   },
 };
 </script>
-
 <template>
-  <section>
-    <input type="text" id="name" name="name" required minlength="2" size="10" />
-    <button>Search</button>
-  </section>
-  <!-- <section class="container">
-    <select name="" id="">
-      <option selected>Select category</option>
-      <option value="">Breaking Bad</option>
-      <option value="">Better Call Saul</option>
-    </select>
-    <div class="container-cards">
-      <div class="founds">
-        <h4>Found 62 characters</h4>
-      </div>
-      <div class="row">
-        <div class="col"></div>
-      </div>
-    </div>
-  </section> -->
+  <AppCard />
 </template>
 
 <style></style>
