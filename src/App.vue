@@ -16,10 +16,10 @@ export default {
   methods: {
     searchMovie(data = "") {
       axios
-        .get("https://api.themoviedb.org/3/movie", {
+        .get("https://api.themoviedb.org/3/search/movie", {
           params: {
             api_key: "16f73b46f87883610eccec6b3eb8063d",
-            // query: this.store.searchText,
+            query: this.store.searchText,
             language: "it-IT",
           },
         })

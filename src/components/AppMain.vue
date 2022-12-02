@@ -26,8 +26,26 @@ export default {
 };
 </script>
 <template>
-  {{ movies }}
-  <AppCard />
+  <div class="container">
+    <div class="row">
+      <AppCard v-for="movie in movies" :info="movie" />
+    </div>
+  </div>
 </template>
 
-<style></style>
+<style>
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col {
+  width: 25%;
+}
+</style>
