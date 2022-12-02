@@ -14,7 +14,7 @@ export default {
   created() {
     axios
       .get(
-        "https://api.themoviedb.org/3/search/movie?api_key=16f73b46f87883610eccec6b3eb8063d&query=matrix"
+        "https://api.themoviedb.org/3/search/movie?api_key=16f73b46f87883610eccec6b3eb8063d&query=star+wars"
       )
       .then((risposta) => {
         console.log(risposta.data.results);

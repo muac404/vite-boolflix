@@ -3,10 +3,12 @@ import axios from "axios";
 import { store } from "./store.js";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
+import AppFooter from "./components/AppFooter.vue";
 export default {
   components: {
     AppHeader,
     AppMain,
+    AppFooter,
   },
   data() {
     return {
@@ -29,11 +31,7 @@ export default {
         })
         .catch((err) => {
           this.store.movies = [];
-          this.store.series = [];
         });
-      if (data === "reset") {
-        this.store.searchText = "";
-      }
     },
   },
 };
@@ -41,21 +39,16 @@ export default {
 
 <template>
   <div>
-    <AppHeader />
-    <AppMain />
+    <AppHeader @search="searchMovie" />
+    <div class="main-section">
+      <AppMain />
+    </div>
+    <AppFooter />
   </div>
 </template>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+.main-section {
+  margin-top: 20px;
 }
 </style>
