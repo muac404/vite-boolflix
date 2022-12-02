@@ -14,27 +14,19 @@ export default {
   created() {
     axios
       .get(
-        "https://api.themoviedb.org/3/movie/550?api_key=16f73b46f87883610eccec6b3eb8063d"
+        "https://api.themoviedb.org/3/search/movie?api_key=16f73b46f87883610eccec6b3eb8063d&query=matrix"
       )
       .then((risposta) => {
-        console.log(risposta.data);
-        this.movies = risposta.data;
-        this.title = risposta.data.title;
-        this.originalTitle = risposta.data.original_title;
-        this.lang = risposta.data.original_language;
-        this.averageVote = risposta.data.vote_average;
-        console.log(
-          this.movies,
-          this.title,
-          this.originalTitle,
-          this.lang,
-          this.averageVote
-        );
+        console.log(risposta.data.results);
+        this.movies = risposta.data.results;
+
+        // console.log(this.movies);
       });
   },
 };
 </script>
 <template>
+  {{ movies }}
   <AppCard />
 </template>
 

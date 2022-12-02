@@ -12,11 +12,16 @@ export default {
 <template>
   <header>
     <h1>BOOLFLIX</h1>
+
     <form @submit.prevent="$emit('search')">
-      <input type="text" placeholder="Cerca il tuo film" />
+      <input type="text" placeholder="Cerca il tuo film.." />
       <button type="submit">Cerca</button>
     </form>
   </header>
 </template>
 
-<style></style>
+<style scoped>
+input {
+  margin-right: 10px;
+}
+</style>
